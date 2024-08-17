@@ -1,0 +1,308 @@
+/* Estilos Generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #bbbbbb;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #6e6e6e;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-username span {
+    color: rgb(0, 0, 0);
+    margin-right: 2rem;
+}
+
+/* Contenedor Principal */
+.main-container {
+    display: flex;
+    margin-top: 60px;
+    min-height: 100vh;
+}
+
+.landing_page_button_container{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.landing_page_button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #d9d9d9;
+    width: 20%;
+}
+
+.landing_page_button:hover{
+    background-color: #5f5f5f;
+}
+
+
+.landing_page_img{
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #919191;
+    width: 200px;
+    padding: 10px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 500;
+}
+
+.sidebar-spacer {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.sidebar-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #c1c1c1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sidebar-button:hover {
+    background-color: #5f5f5f;
+}
+
+/* Área de Contenido */
+.content {
+    margin-left: 220px; 
+    padding: 20px;
+    width: calc(100% - 220px);
+    box-sizing: border-box; 
+}
+
+/* Página de listado de preguntas */
+
+/* Estilo del contenedor de la lista de preguntas */
+#question-list {
+    max-width: 1200px; 
+    margin: 40px auto; 
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los elementos de la lista de preguntas */
+.question-item {
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Estilo del título de la pregunta */
+.question-item h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #333; 
+}
+
+/* Estilo para los párrafos dentro de las tarjetas */
+.question-item p {
+    margin: 10px 0;
+    color: #666; 
+    line-height: 1.6;
+}
+
+/* Estilo para los enlaces en las tarjetas */
+.question-item a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.question-item a:hover {
+    text-decoration: underline; 
+}
+
+/* Estilo del hover en las tarjetas */
+.question-item:hover {
+    background-color: #f1f1f1; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Página de detalles de la pregunta */
+
+/* Estilo del contenedor de detalles de la pregunta */
+.question-detail {
+    max-width: 800px; 
+    margin: 40px auto;
+    padding: 20px; 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del título de la pregunta */
+.question-detail h1 {
+    margin-top: 0;
+    font-size: 28px; 
+    color: #333; 
+}
+
+/* Estilo para los párrafos de la pregunta */
+.question-detail p {
+    margin: 10px 0;
+    line-height: 1.6; 
+    color: #555;
+}
+
+/* Estilos para las secciones de comentarios y respuestas */
+#comments-section, #answers-section {
+    margin-top: 30px;
+}
+
+/* Estilo de los elementos de comentarios y respuestas */
+.comment-item, .answer-item {
+    margin-bottom: 2%;
+    border-bottom: 1px solid #ddd; 
+    padding: 15px 0;
+    background-color: #f9f9f9; 
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilo para los párrafos dentro de los comentarios y respuestas */
+.comment-item p, .answer-item p {
+    margin: 5px 0;
+    color: #444;
+}
+
+/* Estilo para el formulario de comentarios y respuestas */
+form {
+    margin-top: 30px; 
+}
+
+/* Estilo para los campos de texto */
+textarea {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 16px;
+    color: #333; 
+    margin-bottom: 2%;
+}
+
+/* Estilo para el botón del formulario */
+button {
+    padding: 12px 24px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+}
+
+/* Estilo del botón en hover */
+button:hover {
+    background-color: #0056b3; 
+}
+
+
+/* Página de "Ask a Question" */
+
+/* Estilo del contenedor del formulario */
+.ask-question {
+    max-width: 800px; 
+    margin: 40px auto; 
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilo del título del formulario */
+.ask-question h1 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333; 
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column; 
+}
+
+.form-group {
+    margin-bottom: 15px; 
+}
+
+label {
+    display: block;
+    font-weight: bold; 
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-sizing: border-box;
+    font-size: 16px; 
+}
+
+textarea {
+    resize: vertical; 
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #d9d9d9; 
+    color: #fff; 
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #a5a5a5; 
+}

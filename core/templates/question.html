@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Contenido personalizado -->
+    <div class="question-detail">
+        <h1>{{ question.title }}</h1>
+        <p>{{ question.body }}</p>
+        <p><strong>Asked by:</strong> {{ question.author.username }}</p>
+        
+        <!-- Sección de agregar respuesta -->
+        <div id="answers-section">
+            <h2>Answers</h2>
+            {% for answer in answers %}
+                <div class="answer-item">
+                    <p><strong>{{ answer.author.username }}:</strong> {{ answer.body }}</p>
+                    
+                    <!-- Comentarios de una respuesta -->
+                    <div id="comments-section-{{ answer.id }}">
+                        <h3>Comments</h3>
+                        {% for comment in comments %}
+                            {% if comment.answer == answer %}
+                                <div class="comment-item">
+                                    <p><strong>{{ comment.author.username }}:</strong> {{ comment.body }}</p>
+                                </div>
+                            {% endif %}
+                        {% empty %}
+                            <p>No comments yet.</p>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Formulario para agregar un comentario -->
+                    {% if user.is_authenticated %}
+                    <form method="post" action="{% url 'add_comment' answer.id %}">
+                        {% csrf_token %}
+                        <textarea name="body" rows="2" placeholder="Add a comment..."></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                    {% endif %}
+                </div>
+            {% empty %}
+                <p>No answers yet.</p>
+            {% endfor %}
+        </div>
+        
+        <!-- Formulario para agregar una respuesta -->
+        {% if user.is_authenticated %}
+        <h2>Submit an Answer:</h2>
+        <form method="post" action="{% url 'add_answer' question.id %}">
+            {% csrf_token %}
+            <textarea name="body" rows="4" placeholder="Add an answer..."></textarea>
+            <button type="submit" class="answer_button_submit">Submit</button>
+        </form>
+        {% endif %}
+    </div>
+{% endblock %}

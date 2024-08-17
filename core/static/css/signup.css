@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.sign-up-card {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.sign-up-card h2 {
+    margin: 40px 0 20px 0;
+}
+
+.sign-up-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up-card form .field {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.sign-up-card form label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.sign-up-card input[type="text"],
+.sign-up-card input[type="email"],
+.sign-up-card input[type="password"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+.sign-up-card button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sign-up-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el botón de cerrar */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+/* Ocultar elementos no deseados */
+.sign-up-card form .hidden {
+    display: none;
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Contenido personalizado -->
+    <h1>Bienvenido a StudentOverflow</h1>
+    <div class="container_landing">
+        <img class="landing_page_img" src="{% static 'img/landing_page_img.png' %}">
+        <div class="landing_page_button_container">
+            {% if user.is_authenticated %}
+                <button class="landing_page_button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+            {% else %}
+                <button class="landing_page_button" onclick="window.location.href='{% url 'login' %}'">Login</button>
+                <button class="landing_page_button" onclick="window.location.href='{% url 'signup' %}'">Sign up</button>
+            {% endif%}
+        </div>
+    </div>  
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentOverflow</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="{% url 'landing' %}">
+                <img class="logo"src="{% static 'img/StudentOverflow.png' %}" alt="Logo">
+            </a>
+            <div class="nav-username">
+                {% if user.is_authenticated %}
+                    <span class="nav-username">Welcome, {{ user.username }}!</span>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-spacer"></div>
+            <button class="sidebar-button" onclick="window.location.href='{% url 'landing' %}'">Home</button>
+            <button class="sidebar-button" onclick="window.location.href='{% url 'top_question' %}'">Question</button>
+            {% if user.is_authenticated %}
+                <button class="sidebar-button" onclick="window.location.href='{% url 'ask_question' %}'">Ask question</button>
+            {% endif %}
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content">
+            {% block content %}
+            <!-- Aquí se renderizará el contenido personalizado de cada página -->
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

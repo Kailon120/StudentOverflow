@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Contenido personalizado -->
+    <h1>Top Questions</h1>
+    <!-- Listado de preguntas -->
+    <div id="question-list">
+        {% for question in questions %}
+            <div class="question-item">
+                <h2><a href="{% url 'question' question.id %}">{{ question.title }}</a></h2>
+                <p>{{ question.content|truncatewords:30 }}</p>
+                <p><strong>Asked by:</strong> {{ question.author.username }}</p>
+            </div>
+        {% empty %}
+            <p>No questions available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
